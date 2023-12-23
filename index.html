@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutter ich bin dumm</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fontsawesome-6/css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="containerr">
+        <main id="mainContent">
+            <section id="game">
+                <div id="the-Game">
+                    <div id="the-Game-drag">
+                        <i class="fa-solid fa-xmark" id="game-close"></i>
+                    </div>
+                    <div class="wrapper">
+                        <div class="game-details">
+                          <span class="score">Score: 0</span>
+                          <span class="high-score">High Score: 0</span>
+                        </div>
+                        <div class="play-board"></div>
+                        <div class="controls">
+                          <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
+                          <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
+                          <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
+                          <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="profile">
+                <div id="the-Profile">
+                    <div id="the-Profile-drag">
+                        <i class="fa-solid fa-xmark" id="profile-close"></i>
+                    </div>
+                    <div class="profile-content">
+                        <div class="log-sign">
+                            <a id="logInActive" style="text-decoration: underline;">Log in</a>
+                            <i class="fa-solid fa-toggle-off"></i>
+                            <i class="fa-solid fa-toggle-on" style="display: none;"></i>
+                            <a id="signInActive">Sign in</a>
+                        </div>
+                        <div class="form">
+                            <div class="logIn">
+                                Log in
+                                <form action="">
+                                    <input type="email" name="email" placeholder="Email"><br>
+                                    <input type="password" name="password" placeholder="Password"><br>
+                                    <button>Let's go!</button>
+                                </form>
+                            </div>
+                            <div class="signIn">
+                                Sign in
+                                <form action="">
+                                    <input type="text" name="username"  placeholder="Username"><br>
+                                    <input type="email" name="email" placeholder="Email"><br>
+                                    <input type="password" name="password"  placeholder="Password"><br>
+                                    <button>Let's go</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="support">
+                <div id="the-Support">
+                    <div id="the-Support-drag">
+                        <i class="fa-solid fa-xmark" id="support-close"></i>
+                    </div>
+                    <div class="support-content">
+                        <div class="content">
+                            <div class="content-1">
+                                <div class="text">
+                                    <h2><b>Support us</b></h2>
+                                    <p style="font-weight: 600;" id="p">Support our cause by making a donation. Your contribution, no matter the size, creates a significant impact and helps us continue our mission.</p>
+                                    <p style="font-weight: 600;">To contribute, please reach out to us via email at <a href="mailto:indragiri@gmail.com">indragiri@gmail.com</a></p>
+                                    <h3><b>Thank you for your support!</b></h3>
+                                </div>
+                                <div class="qr">
+                                    <h5><b>Scan QR Code below</b></h5>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <nav>
+            <ul>
+                <li id="game-Tab">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <p>Games</p>
+                </li>
+                <li id="profile-Tab">
+                    <i class="fa-solid fa-user"></i>
+                    <p>Profile</p>
+                </li>
+                <li id="support-Tab">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>Support us</p>
+                </li>
+            </ul>
+            <div class="bgchange" style="position: absolute;">
+                <input type="file" id="imageInput" accept="img/*" style="display: none;">
+                <label for="imageInput"><i class="fa-solid fa-pen"></i><a>Change <span>background</span></a></label>
+            </div>
+        </nav>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/support.js"></script>
+    <script src="js/window-control.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

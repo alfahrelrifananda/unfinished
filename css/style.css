@@ -1,0 +1,447 @@
+@font-face {
+  font-family: "product-sans";
+  src: url("../Product-Sans-Regular.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+body,
+html {
+  font-family: "product-sans";
+  overflow: hidden;
+}
+
+.containerr {
+  width: 100vw;
+  height: 100vh;
+}
+.containerr main {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(../img/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.containerr nav {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  bottom: 0;
+  width: 100vw;
+}
+.containerr nav ul {
+  display: flex;
+  background-color: #1e1e1e;
+  border: 1px solid white;
+  margin: 0px;
+  width: 450px;
+  height: 75px;
+  padding: 0 3px 0 3px;
+  border-radius: 15px 15px 0 0;
+  justify-content: center;
+}
+.containerr nav ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 90px;
+  height: 75px;
+  padding: 10px;
+  padding-top: 20px;
+}
+.containerr nav ul li i {
+  color: #d9d9d997;
+  font-size: 1.3em;
+}
+.containerr nav ul li p {
+  color: #d9d9d997;
+  font-size: 0.7em;
+}
+.containerr nav ul li:hover {
+  border-top: 0.1px solid transparent;
+  border-right: 0.1px solid white;
+  border-bottom: 0.1px solid transparent;
+  border-left: 0.1px solid white;
+}
+.containerr nav ul li:hover p,
+.containerr nav ul li:hover i {
+  color: #ffffff;
+}
+.containerr nav ul #game-Tab.click,
+.containerr nav ul #profile-Tab.click,
+.containerr nav ul #support-Tab.click {
+  border-top: 0.1px solid transparent;
+  border-right: 0.1px solid white;
+  border-bottom: 0.1px solid transparent;
+  border-left: 0.1px solid white;
+  background-color: #101010;
+}
+.containerr nav ul #game-Tab.toFront,
+.containerr nav ul #profile-Tab.toFront,
+.containerr nav ul #support-Tab.toFront {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.containerr nav ul #game-Tab.click i,
+.containerr nav ul #game-Tab.click p,
+.containerr nav ul #profile-Tab.click i,
+.containerr nav ul #profile-Tab.click p, 
+.containerr nav ul #support-Tab.click i, 
+.containerr nav ul #support-Tab.click p {
+  color: white;
+}
+
+.containerr nav .bgchange {
+  background-color: #d1cdcd;
+  right: 30px;
+  border-radius: 10px;
+  font-weight: 700;
+  overflow: hidden;
+  opacity: .5;
+}
+.containerr nav .bgchange label {
+  overflow: hidden;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  width: 37px;
+  height: 100%;
+  transition: all .5s ease;
+}
+.containerr nav .bgchange label i {
+  width: 35px;
+  text-align: center;
+}
+.containerr nav .bgchange label a {
+  width: fit-content;
+  overflow: hidden;
+  display: flex;
+  gap: 5px;
+  padding-left: 5px;
+}
+.containerr nav .bgchange label:hover {
+  width: 215px;
+}
+.containerr main #game #the-Game.toFront, 
+.containerr main #profile #the-Profile.toFront, 
+.containerr main #support #the-Support.toFront {
+  z-index: 99;
+}
+.containerr main #game #the-Game,
+.containerr main #profile #the-Profile, 
+.containerr main #support #the-Support {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 98;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-5%);
+  justify-content: center;
+  position: absolute;
+  height: fit-content;
+  display: none;
+  width: fit-content;
+}
+.containerr main #game #the-Game.show,
+.containerr main #profile #the-Profile.show, 
+.containerr main #support #the-Support.show {
+  display: block;
+}
+.containerr main #game #the-Game #the-Game-drag,
+.containerr main #profile #the-Profile #the-Profile-drag,
+.containerr main #support #the-Support #the-Support-drag {
+  height: 50px;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+  justify-content: end;
+  align-items: center;
+  background: #0f0f0f;
+  overflow: hidden;
+  border: 1px solid white;
+}
+.containerr main #game #the-Game #the-Game-drag i,
+.containerr main #profile #the-Profile #the-Profile-drag i,
+.containerr main #support #the-Support #the-Support-drag i {
+  color: #ffffff;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  cursor: default;
+}
+.containerr main #game #the-Game #the-Game-drag i:hover,
+.containerr main #profile #the-Profile #the-Profile-drag i:hover, 
+.containerr main #support #the-Support #the-Support-drag i:hover {
+  background-color: #ff003d;
+}
+.containerr main #game #the-Game .wrapper {
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  border: 1px solid rgb(0, 0, 0);
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  background: #1e1e1e;
+}
+.containerr main #game #the-Game .wrapper .game-details {
+  color: #000000;
+  background-color: #c1c1c1;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+.containerr main #game #the-Game .wrapper .play-board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  border-top: 0.5px solid rgb(0, 0, 0);
+  background: #acaaaa;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+.containerr main #game #the-Game .wrapper .play-board .food {
+  background: #ff003d;
+  border: 0.3px solid #1e1e1e;
+}
+.containerr main #game #the-Game .wrapper .play-board .head {
+  background: #d9d9d9;
+  border: 0.3px solid #1e1e1e;
+}
+
+.containerr main #game #the-Game .wrapper .controls {
+  display: none;
+  justify-content: space-between;
+}
+.containerr main #game #the-Game .wrapper .controls i {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: white;
+  width: calc(100% / 4);
+  cursor: pointer;
+  border-right: 1px solid #171b26;
+}
+.containerr main #profile #the-Profile {
+  width: 500px;
+  height: 500px;
+}
+.containerr main #profile #the-Profile .profile-content {
+  width: 500px;
+  height: 550px;
+  padding: 30px;
+  background-color: #c1c1c1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+.containerr main #profile #the-Profile .profile-content .log-sign {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+.containerr main #profile #the-Profile .profile-content .log-sign i {
+  font-size: 1.5em;
+}
+.containerr main #profile #the-Profile .profile-content .form {
+  background-color: #acaaaa;
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  margin-top: 15px;
+  font-weight: 800;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: rgb(0, 0, 0) 5px 5px;
+}
+.containerr main #profile #the-Profile .profile-content .form .logIn {
+  display: block;
+}
+.containerr main #profile #the-Profile .profile-content .form .logIn input, 
+ .containerr main #profile #the-Profile .profile-content .form .signIn input {
+  margin: 10px;
+  padding: 10px;
+  margin-top: 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: .7em;
+  font-weight: 750;
+  box-shadow: rgb(0, 0, 0) 5px 5px;
+}
+.containerr main #profile #the-Profile .profile-content .form .logIn button, 
+.containerr main #profile #the-Profile .profile-content .form .signIn button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: .7em;
+  font-weight: 750;
+  box-shadow: rgb(0, 0, 0) 5px 5px;
+  border: none;
+  text-align: center;
+  margin: 30px;
+}
+.containerr main #profile #the-Profile .profile-content .form .logIn button:hover, 
+.containerr main #profile #the-Profile .profile-content .form .signIn button:hover {
+  box-shadow: none;
+  transform: translateX(5px) translateY(5px);
+}
+.containerr main #profile #the-Profile .profile-content .form .signIn {
+  display: none;
+}
+.containerr main #support #the-Support {
+  width: 1000px;
+  height: 500px;
+  border-radius: 15px 15px 0 0;
+}
+.containerr main #support #the-Support .support-content {
+  border: 1px solid black;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.containerr main #support #the-Support .support-content div {
+  height: 100%;
+}
+.containerr main #support #the-Support .support-content .content {
+  background-color: #c1c1c1;
+  width: 50%;
+}
+.containerr main #support #the-Support .support-content .content .content-1 {
+  width: 600px;
+  height: 400px;
+  border-radius: 15px;
+  background-color: #acaaaaa8;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 60%;
+  left: 35%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgb(0, 0, 0) 5px 5px;
+}
+.containerr main #support #the-Support .support-content .content .content-1 .text {
+  text-align: start;
+  font-weight: 700;
+  width: 370px;
+  font-size: .9rem;
+}
+.containerr main #support #the-Support .support-content .content .content-1 .qr {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.containerr main #support #the-Support .support-content .content .content-1 .qr div {
+  width: 150px;
+  height: 150px;
+  background-image: url(../img/qr.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  box-shadow: rgb(0, 0, 0) 5px 5px;
+}
+.containerr main #support #the-Support .support-content .image {
+  background-image: url(../img/snake.png);
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+}
+@media screen and (max-width: 950px) {
+  .containerr nav .bgchange {
+    bottom: 100px;
+  }
+  .containerr main #game #the-Game .wrapper {
+    width: 90vmin;
+    height: 115vmin;
+  }
+  .containerr main #game #the-Game .wrapper .game-details {
+    font-size: 1rem;
+    padding: 15px 27px;
+  }
+  .containerr main #game #the-Game .wrapper .controls {
+    display: flex;
+    border-top: 0.5px solid white;
+  }
+  .containerr main #game #the-Game .wrapper .controls i {
+    padding: 15px 0;
+    color: white;
+    font-size: 1rem;
+  }
+  .containerr main #game #the-Game .wrapper .controls i:hover {
+    color: #0f0f0f;
+    background-color: white;
+  }
+  .containerr main #profile #the-Profile {
+    width: 350px;
+  }
+  .containerr main #profile #the-Profile .profile-content {
+    height: fit-content;
+    width: 350px;
+  }
+  .containerr main #support #the-Support {
+    width: 350px;
+  }
+  .containerr main #support #the-Support .support-content {
+    flex-direction: column-reverse;
+  }
+  .containerr main #support #the-Support .support-content .content {
+    width: 100%;
+    height: 150%;
+  }
+  .containerr main #support #the-Support .support-content .image {
+    width: 100%;
+    height: 50%;
+  }
+  .containerr main #support #the-Support .support-content .content .content-1 {
+    width: 300px;
+    height: 300px;
+    flex-direction: column-reverse;
+    background-color: #acaaaa;
+    top: 70%;
+    left:50%;
+  }
+  .containerr main #support #the-Support .support-content .content .content-1 .text {
+    width: 100%;
+  }
+  .containerr main #support #the-Support .support-content .content .content-1 .text h2 {
+    opacity: 0;
+  }
+  .containerr main #support #the-Support .support-content .content .content-1 .text #p {
+    opacity: 0;
+  }
+  .containerr main #support #the-Support .support-content .content .content-1 .qr {
+    height: fit-content;
+    background-color: #d9d9d98f;
+    bottom: 50%;
+    box-shadow: rgb(0, 0, 0) 5px 5px;
+    position: absolute;
+    border-radius: 10px;
+    padding: 15px;
+  }
+}
+
